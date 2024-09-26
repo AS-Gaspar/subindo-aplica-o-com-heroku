@@ -4,6 +4,15 @@ const path = require('path')
 
 const PORT = process.env.PORT || 5001
 
+function showTimes() {
+  const times = process.env.TIMES || 5
+  let result = ''
+  for (i = 0; i < times; i++) {
+    result += i + ' '
+  }
+  return result
+}
+
 express()
    .use(express.static(path.join(__dirname, 'public')))
    .set('views', path.join(__dirname, 'views'))
